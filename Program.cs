@@ -19,24 +19,33 @@ namespace AplikasiBarang
 				int ketikAngka;
 				menu();
 				ketikAngka = int.Parse(Console.ReadLine());
-				switch (ketikAngka)
+				try
 				{
-					case 1:
-						InputData(daftarBarang);
-						break;
-					case 2:
-						EditData(daftarBarang);
-						break;
-					case 3:
-						ShowData(daftarBarang);
-						break;
-					case 4:
-						DeleteData(daftarBarang);
-						break;
-					case 5:
-						Exit = 1;
-						Console.Clear();
-						break;
+					switch (ketikAngka)
+					{
+						case 1:
+							InputData(daftarBarang);
+							break;
+						case 2:
+							EditData(daftarBarang);
+							break;
+						case 3:
+							ShowData(daftarBarang);
+							break;
+						case 4:
+							DeleteData(daftarBarang);
+							break;
+						case 5:
+							Exit = 1;
+							Console.Clear();
+							break;
+					}
+				}
+				catch (Exception)
+				{
+					Console.WriteLine("Silahkan ketik angka 1 sampai 5.");
+					Console.ReadLine();
+					Console.Clear();
 				}
 			} while (Exit == 0);
 		}
